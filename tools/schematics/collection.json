@@ -1,0 +1,12 @@
+{
+  "$schema": "../../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "name": "senses 2",
+  "version": "0.0.1",
+  "extends": "@nrwl/schematics",
+  "schematics": {
+    "test-schematic": {
+      "description": "A test schematic.",
+      "factory": "./test-schematics/index"
+    }
+  }
+}

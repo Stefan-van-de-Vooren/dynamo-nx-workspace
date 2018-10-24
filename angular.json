@@ -128,7 +128,7 @@
       "typescriptMismatch": false,
       "versionMismatch": false
     },
-    "defaultCollection": "@nrwl/schematics"
+    "defaultCollection": "./tools/schematics/collection.json"
   },
   "defaultProject": "myapp"
 }
