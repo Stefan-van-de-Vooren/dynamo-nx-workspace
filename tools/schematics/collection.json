@@ -1,0 +1,15 @@
+{
+    "$schema": "../../node_modules/@angular-devkit/schematics/collection-schema.json",
+    "name": "dynamo-collection",
+    "version": "0.0.1",
+    "extends": [
+        "@nrwl/schematics"
+    ],
+    "schematics": {
+        "dynamo-app": {
+            "factory": "./dynamo-app",
+            "schema": "./dynamo-app/schema.json",
+            "description": "Create new senses 2 app"
+        }
+    }
+}
