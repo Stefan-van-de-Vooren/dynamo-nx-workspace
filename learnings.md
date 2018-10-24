@@ -1,4 +1,15 @@
-### folder structure
-When everything goes into the lib, how do we setup the structure. Should we use root folders inside the lib 'pages', 'features', 'shared'? or use a pre pr post fix transation.page? 
+#What did we do
 
+- create a NX workspace
+- have a look into the NX schematics
+- generate a default nx-app
+
+## add custom schematic
+### option 1
+- We add a custom schematic with ```ng generate @nrwl/schematics:workspace-schematic <name schematic>```
+- we run the schematic ```npm run workspace-schematic <name schematic> --name <name>```
+
+**cons:** 
+- custom schematics are not added into the Angular Console
+- you don't run te schematic in the normal way ```ng g <schematic name>```
 
