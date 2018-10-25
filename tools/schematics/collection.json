@@ -10,6 +10,11 @@
             "factory": "./dynamo-app",
             "schema": "./dynamo-app/schema.json",
             "description": "Create new senses 2 app"
+        },
+        "test-schematics": {
+            "factory": "./test-schematics",
+            "schema": "./test-schematics/schema.json",
+            "description": "Create new senses 2 app"
         }
     }
 }
