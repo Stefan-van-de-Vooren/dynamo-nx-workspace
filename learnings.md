@@ -11,5 +11,5 @@
 
 **cons:** 
 - custom schematics are not added into the Angular Console
-- you don't run te schematic in the normal way ```ng g <schematic name>```
+- you don't run te schematic in the normal way ```ng g <schematic name>``` (nice guide to configure it: https://stackoverflow.com/questions/51610745/nrwl-nx-workspace-specific-schematics)
 
