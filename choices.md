@@ -8,4 +8,3 @@
 
 ## extends NX schematics
 - find out if we want to add schematics to NX, or create out own schematics folder
- 
