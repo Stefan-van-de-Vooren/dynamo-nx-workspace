@@ -16,6 +16,9 @@
     ],
     "baseUrl": ".",
     "paths": {
+      "@dynamo/pages/obb-home-page": [
+        "libs/pages/obb-home-page/src/index.ts"
+      ]
     }
   },
   "exclude": [
