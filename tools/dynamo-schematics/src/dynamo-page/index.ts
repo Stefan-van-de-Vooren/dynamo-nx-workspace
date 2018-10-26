@@ -11,7 +11,8 @@ export default function(schema: any): Rule {
     externalSchematic("@schematics/angular", "component", {
       project: 'pages-' + schema.name,
       module: 'pages-' + schema.name + '.module.ts',
-      name: schema.name
+      name: schema.name,
+      styleext: "scss"
     }),
     // (tree: Tree, _context: SchematicContext) => {
     // console.log(tree);
