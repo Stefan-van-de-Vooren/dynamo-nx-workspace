@@ -121,6 +121,34 @@
           }
         }
       }
+    },
+    "pages-obb-home-page": {
+      "root": "libs/pages/obb-home-page",
+      "sourceRoot": "libs/pages/obb-home-page/src",
+      "projectType": "library",
+      "prefix": "dynamo",
+      "architect": {
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/pages/obb-home-page/src/test.ts",
+            "tsConfig": "libs/pages/obb-home-page/tsconfig.spec.json",
+            "karmaConfig": "libs/pages/obb-home-page/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/pages/obb-home-page/tsconfig.lib.json",
+              "libs/pages/obb-home-page/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {
@@ -128,7 +156,7 @@
       "typescriptMismatch": false,
       "versionMismatch": false
     },
-    "defaultCollection": "./tools/schematics/collection.json"
+    "defaultCollection": "."
   },
   "defaultProject": "myapp"
 }

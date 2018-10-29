@@ -1,0 +1,10 @@
+{
+  "pages-obb-home-page": [],
+  "myapp-e2e": [
+    {
+      "projectName": "myapp",
+      "type": "implicit"
+    }
+  ],
+  "myapp": []
+}

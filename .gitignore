@@ -62,3 +62,6 @@ typings/
 
 # IDE
 .idea
+
+tools/schematics/**/*.js
+tools/schematics/**/*.js.map

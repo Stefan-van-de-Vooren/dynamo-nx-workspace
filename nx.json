@@ -13,6 +13,9 @@
     },
     "myapp-e2e": {
       "tags": []
+    },
+    "pages-obb-home-page": {
+      "tags": []
     }
   }
 }
