@@ -35,8 +35,6 @@
         "@angular/platform-browser": "^6.1.0",
         "@angular/platform-browser-dynamic": "^6.1.0",
         "@angular/router": "^6.1.0",
-        "@ionic/angular": "^4.0.0-beta.13",
-        "@ionic/schematics-angular": "^1.0.7",
         "@ngrx/effects": "6.0.1",
         "@ngrx/router-store": "6.0.1",
         "@ngrx/store": "6.0.1",
