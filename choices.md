@@ -10,6 +10,6 @@
 - find out if we want to add schematics to NX, or create our own schematics folder
 
 ## testing schematics
-- We've created a npm script `test-schematics` which uses `jest` to test schematics (`jasmine` would also work, but this is aligned with the testing decissions taken by darwin/edison). It will execute all the spec files under `/tools/schematics/**`
+- We've created a npm script `test-schematics` which uses `jest` to test schematics (`jasmine` would also work, but this is aligned with the testing decisions taken by darwin/edison). It will execute all the spec files under `/tools/schematics/**`
 
     npm run test-schematics
