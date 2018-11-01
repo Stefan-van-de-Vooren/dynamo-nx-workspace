@@ -39,7 +39,17 @@ It turns out the package ‘@schematics/angular’ including its own TypeScript 
 
 We resolved the issue by updating our TypeScript version inside the package.json. It is also possible to remove the node_modules/@schematics/angular/node_modules folder. It is not clear why Angular/schematics including the TypeScript definition.
 
-# Debugging
+other possibles under tsconfig.json -> compilerOptions:
+```
+    paths": {
+      "typescript": [
+        "node_modules/typescript"
+      ]
+    }
+```
+https://www.typescriptlang.org/docs/handbook/module-resolution.html
+
+## Debugging
 To debugging a schematic use:
 ```bash 
  node --inspect-brk $(which schematics) .:<name-schematic> --params
@@ -55,8 +65,16 @@ There’s a open issue for adding other schematics:
 - https://github.com/nrwl/angular-console/issues/142
 - https://github.com/nrwl/angular-console/issues/156 
 
+## Schematics arguments
+When calling an external schematic with an required param, the CLI throws an error
 
-
+You could use 'smart' defaults. Below schema defaults the property to the first argument 
+```    
+    "$default": {
+        "$source": "argv",
+        "index": 0
+    }
+```
 ## Examples 
 
     ng g test-schematics --name libtest
