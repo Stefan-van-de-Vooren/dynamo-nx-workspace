@@ -28,9 +28,11 @@ describe('dynamo-app', () => {
         expect(tree.files.length).toBeGreaterThan(0);
 
         expect(tree.files).toContain(
-            '/libs/shared/classes/test-directive.spec.ts',
+            '/libs/shared/directives/test-directive.directive.spec.ts',
         );
-        expect(tree.files).toContain('/libs/shared/classes/test-directive.ts');
+        expect(tree.files).toContain(
+            '/libs/shared/directives/test-directive.directive.ts',
+        );
     });
 
     it('overrides angular directive - feature', () => {
@@ -47,10 +49,10 @@ describe('dynamo-app', () => {
         expect(tree.files.length).toBeGreaterThan(0);
 
         expect(tree.files).toContain(
-            '/libs/features/test-feature/classes/test-directive.spec.ts',
+            '/libs/features/test-feature/directives/test-directive.directive.spec.ts',
         );
         expect(tree.files).toContain(
-            '/libs/features/test-feature/classes/test-directive.ts',
+            '/libs/features/test-feature/directives/test-directive.directive.ts',
         );
     });
 
@@ -68,10 +70,10 @@ describe('dynamo-app', () => {
         expect(tree.files.length).toBeGreaterThan(0);
 
         expect(tree.files).toContain(
-            '/libs/pages/test-page/classes/test-directive.spec.ts',
+            '/libs/pages/test-page/directives/test-directive.directive.spec.ts',
         );
         expect(tree.files).toContain(
-            '/libs/pages/test-page/classes/test-directive.ts',
+            '/libs/pages/test-page/directives/test-directive.directive.ts',
         );
     });
 });
