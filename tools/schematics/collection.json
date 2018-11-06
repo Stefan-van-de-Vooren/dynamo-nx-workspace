@@ -52,6 +52,12 @@
             "factory": "./angular-artifacts/index#angularInterface",
             "description": "Create an interface.",
             "schema": "./angular-artifacts/schema.json"
+        },
+        "module": {
+            "aliases": ["m"],
+            "factory": "./angular-artifacts/index#angularModule",
+            "description": "Create an Angular module.",
+            "schema": "./angular-artifacts/schema.json"
         }
     }
 }

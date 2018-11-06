@@ -40,6 +40,10 @@ export function angularInterface(schema: Schema): Rule {
     return angularSchematic('interface', schema, null);
 }
 
+export function angularModule(schema: Schema): Rule {
+    return angularSchematic('module', schema, null);
+}
+
 function angularSchematic(
     schematic: string,
     schema: Schema,
