@@ -11,6 +11,7 @@ import {
 export function angularComponent(schema: Schema): Rule {
     return (host: Tree, context: SchematicContext) => {
         const options = normalizeOptions(host, schema, 'component');
+        options['skipImport'] = true;
 
         return chain([
             externalSchematic('@schematics/angular', 'component', options),
@@ -22,9 +23,21 @@ export function angularComponent(schema: Schema): Rule {
 export function angularPipe(schema: Schema): Rule {
     return (host: Tree, context: SchematicContext) => {
         const options = normalizeOptions(host, schema, 'pipe');
+        options['skipImport'] = true;
 
         return chain([
             externalSchematic('@schematics/angular', 'pipe', options),
+            setTag(options),
+        ])(host, context);
+    };
+}
+
+export function angularService(schema: Schema): Rule {
+    return (host: Tree, context: SchematicContext) => {
+        const options = normalizeOptions(host, schema, 'service');
+
+        return chain([
+            externalSchematic('@schematics/angular', 'service', options),
             setTag(options),
         ])(host, context);
     };
@@ -60,6 +73,5 @@ function normalizeOptions(host: Tree, options: Schema, type: string): any {
         ...options,
         path,
         tag,
-        skipImport: true,
     };
 }
