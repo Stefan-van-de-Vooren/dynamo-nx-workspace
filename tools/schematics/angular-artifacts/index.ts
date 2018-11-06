@@ -9,58 +9,39 @@ import {
 } from '@angular-devkit/schematics';
 
 export function angularComponent(schema: Schema): Rule {
-    return (host: Tree, context: SchematicContext) => {
-        const options = normalizeOptions(host, schema, 'component');
-        options['skipImport'] = true;
-
-        return chain([
-            externalSchematic('@schematics/angular', 'component', options),
-            setTag(options),
-        ])(host, context);
-    };
+    return angularSchematic('component', schema, { skipImport: true });
 }
 
 export function angularPipe(schema: Schema): Rule {
-    return (host: Tree, context: SchematicContext) => {
-        const options = normalizeOptions(host, schema, 'pipe');
-        options['skipImport'] = true;
-
-        return chain([
-            externalSchematic('@schematics/angular', 'pipe', options),
-            setTag(options),
-        ])(host, context);
-    };
+    return angularSchematic('pipe', schema, { skipImport: true });
 }
 
 export function angularService(schema: Schema): Rule {
-    return (host: Tree, context: SchematicContext) => {
-        const options = normalizeOptions(host, schema, 'service');
-
-        return chain([
-            externalSchematic('@schematics/angular', 'service', options),
-            setTag(options),
-        ])(host, context);
-    };
+    return angularSchematic('service', schema, null);
 }
 
 export function angularGuard(schema: Schema): Rule {
-    return (host: Tree, context: SchematicContext) => {
-        const options = normalizeOptions(host, schema, 'guard');
-
-        return chain([
-            externalSchematic('@schematics/angular', 'guard', options),
-            setTag(options),
-        ])(host, context);
-    };
+    return angularSchematic('guard', schema, null);
 }
 
 export function angularClass(schema: Schema): Rule {
+    return angularSchematic('class', schema, { spec: true });
+}
+
+function angularSchematic(
+    schematic: string,
+    schema: Schema,
+    extraOptions: any,
+): Rule {
     return (host: Tree, context: SchematicContext) => {
-        const options = normalizeOptions(host, schema, 'class');
-        options['spec'] = true;
+        const options = normalizeOptions(host, schema, schematic);
 
         return chain([
-            externalSchematic('@schematics/angular', 'class', options),
+            externalSchematic(
+                '@schematics/angular',
+                schematic,
+                Object.assign(options, extraOptions),
+            ),
             setTag(options),
         ])(host, context);
     };
