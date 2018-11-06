@@ -22,6 +22,12 @@
             "factory": "./angular-artifacts/index#angularService",
             "description": "Create an Angular service.",
             "schema": "./angular-artifacts/schema.json"
+        },
+        "guard": {
+            "aliases": ["g"],
+            "factory": "./angular-artifacts/index#angularGuard",
+            "description": "Create a guard.",
+            "schema": "./angular-artifacts/schema.json"
         }
     }
 }

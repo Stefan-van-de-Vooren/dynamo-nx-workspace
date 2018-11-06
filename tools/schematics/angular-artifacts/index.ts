@@ -43,6 +43,17 @@ export function angularService(schema: Schema): Rule {
     };
 }
 
+export function angularGuard(schema: Schema): Rule {
+    return (host: Tree, context: SchematicContext) => {
+        const options = normalizeOptions(host, schema, 'guard');
+
+        return chain([
+            externalSchematic('@schematics/angular', 'guard', options),
+            setTag(options),
+        ])(host, context);
+    };
+}
+
 function setTag(options: any): Rule {
     const tag = options.tag;
     delete options.tag;
