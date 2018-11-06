@@ -28,6 +28,12 @@
             "factory": "./angular-artifacts/index#angularGuard",
             "description": "Create a guard.",
             "schema": "./angular-artifacts/schema.json"
+        },
+        "class": {
+            "aliases": ["cl"],
+            "factory": "./angular-artifacts/index#angularClass",
+            "description": "Create a class.",
+            "schema": "./angular-artifacts/schema.json"
         }
     }
 }

@@ -54,6 +54,18 @@ export function angularGuard(schema: Schema): Rule {
     };
 }
 
+export function angularClass(schema: Schema): Rule {
+    return (host: Tree, context: SchematicContext) => {
+        const options = normalizeOptions(host, schema, 'class');
+        options['spec'] = true;
+
+        return chain([
+            externalSchematic('@schematics/angular', 'class', options),
+            setTag(options),
+        ])(host, context);
+    };
+}
+
 function setTag(options: any): Rule {
     const tag = options.tag;
     delete options.tag;
@@ -68,14 +80,19 @@ function normalizeOptions(host: Tree, options: Schema, type: string): any {
     delete options.feature;
     delete options.page;
 
-    let path = `libs/shared/${type}s`;
+    let types = `${type}s`;
+    if (type.endsWith('s')) {
+        types = `${type}es`;
+    }
+
+    let path = `libs/shared/${types}`;
     let tag = '';
 
     if (feature) {
-        path = `libs/features/${feature}/${type}s`;
+        path = `libs/features/${feature}/${types}`;
         tag = `feature:${feature}`;
     } else if (page) {
-        path = `libs/pages/${page}/${type}s`;
+        path = `libs/pages/${page}/${types}`;
         tag = `page:${page}`;
     }
 
