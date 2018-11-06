@@ -37,8 +37,14 @@
         },
         "directive": {
             "aliases": ["d"],
-            "factory": "./angular-artifacts/index#angularClass",
+            "factory": "./angular-artifacts/index#angularDirective",
             "description": "Create an Angular directive.",
+            "schema": "./angular-artifacts/schema.json"
+        },
+        "enum": {
+            "aliases": ["e"],
+            "factory": "./angular-artifacts/index#angularEnum",
+            "description": "Create an enumeration.",
             "schema": "./angular-artifacts/schema.json"
         }
     }

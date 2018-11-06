@@ -32,6 +32,10 @@ export function angularDirective(schema: Schema): Rule {
     return angularSchematic('directive', schema, { skipImport: true });
 }
 
+export function angularEnum(schema: Schema): Rule {
+    return angularSchematic('enum', schema, null);
+}
+
 function angularSchematic(
     schematic: string,
     schema: Schema,
