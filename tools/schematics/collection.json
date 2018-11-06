@@ -1,0 +1,21 @@
+{
+    "$schema":
+        "../node_modules/@angular-devkit/schematics/collection-schema.json",
+    "name": "senses2-schematics-collection",
+    "version": "0.0.1",
+    "extends": ["@nrwl/schematics"],
+    "schematics": {
+        "component": {
+            "aliases": ["c"],
+            "factory": "./angular-artifacts/index#angularComponent",
+            "description": "Create an Angular component.",
+            "schema": "./angular-artifacts/schema.json"
+        },
+        "pipe": {
+            "aliases": ["p"],
+            "factory": "./angular-artifacts/index#angularPipe",
+            "description": "Create an Angular pipe.",
+            "schema": "./angular-artifacts/schema.json"
+        }
+    }
+}
