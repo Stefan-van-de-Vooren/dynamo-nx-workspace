@@ -34,6 +34,12 @@
             "factory": "./angular-artifacts/index#angularClass",
             "description": "Create a class.",
             "schema": "./angular-artifacts/schema.json"
+        },
+        "directive": {
+            "aliases": ["d"],
+            "factory": "./angular-artifacts/index#angularClass",
+            "description": "Create an Angular directive.",
+            "schema": "./angular-artifacts/schema.json"
         }
     }
 }

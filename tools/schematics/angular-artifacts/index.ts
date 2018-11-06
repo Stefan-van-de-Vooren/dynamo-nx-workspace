@@ -28,6 +28,10 @@ export function angularClass(schema: Schema): Rule {
     return angularSchematic('class', schema, { spec: true });
 }
 
+export function angularDirective(schema: Schema): Rule {
+    return angularSchematic('directive', schema, { skipImport: true });
+}
+
 function angularSchematic(
     schematic: string,
     schema: Schema,
