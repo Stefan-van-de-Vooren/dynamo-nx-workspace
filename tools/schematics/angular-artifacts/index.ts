@@ -36,6 +36,10 @@ export function angularEnum(schema: Schema): Rule {
     return angularSchematic('enum', schema, null);
 }
 
+export function angularInterface(schema: Schema): Rule {
+    return angularSchematic('interface', schema, null);
+}
+
 function angularSchematic(
     schematic: string,
     schema: Schema,
