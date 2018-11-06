@@ -14,24 +14,84 @@ describe('dynamo-app', () => {
         appTree = testing.createEmptyWorkspace(appTree);
     });
 
-    it('overrides angular component', () => {
+    it('overrides angular component - shared', () => {
         const runner = new SchematicTestRunner(
             'senses2-angular-artifacts',
             collectionPath,
         );
-        runner.runSchematic('component', { name: 'test-component' }, appTree);
+        const tree = runner.runSchematic(
+            'component',
+            { name: 'test-component' },
+            appTree,
+        );
 
-        // expect(tree.files.length).toBeGreaterThan(0);
+        expect(tree.files.length).toBeGreaterThan(0);
 
-        // const packageJson = json.readJsonInTree(tree, '/package.json');
-        // expect(packageJson.dependencies['@ionic/angular']).toEqual(
-        //     '4.0.0-beta.13',
-        // );
+        expect(tree.files).toContain(
+            '/libs/shared/components/test-component/test-component.component.css',
+        );
+        expect(tree.files).toContain(
+            '/libs/shared/components/test-component/test-component.component.html',
+        );
+        expect(tree.files).toContain(
+            '/libs/shared/components/test-component/test-component.component.spec.ts',
+        );
+        expect(tree.files).toContain(
+            '/libs/shared/components/test-component/test-component.component.ts',
+        );
+    });
 
-        // const angularJson = json.readJsonInTree(tree, '/angular.json');
-        // expect(angularJson.projects['test-app'].root).toEqual('apps/test-app/');
-        // expect(angularJson.projects['test-app-e2e'].root).toEqual(
-        //     'apps/test-app-e2e/',
-        // );
+    it('overrides angular component - feature', () => {
+        const runner = new SchematicTestRunner(
+            'senses2-angular-artifacts',
+            collectionPath,
+        );
+        const tree = runner.runSchematic(
+            'component',
+            { name: 'test-component', feature: 'test-feature' },
+            appTree,
+        );
+
+        expect(tree.files.length).toBeGreaterThan(0);
+
+        expect(tree.files).toContain(
+            '/libs/features/test-feature/components/test-component/test-component.component.css',
+        );
+        expect(tree.files).toContain(
+            '/libs/features/test-feature/components/test-component/test-component.component.html',
+        );
+        expect(tree.files).toContain(
+            '/libs/features/test-feature/components/test-component/test-component.component.spec.ts',
+        );
+        expect(tree.files).toContain(
+            '/libs/features/test-feature/components/test-component/test-component.component.ts',
+        );
+    });
+
+    it('overrides angular component - page', () => {
+        const runner = new SchematicTestRunner(
+            'senses2-angular-artifacts',
+            collectionPath,
+        );
+        const tree = runner.runSchematic(
+            'component',
+            { name: 'test-component', page: 'test-page' },
+            appTree,
+        );
+
+        expect(tree.files.length).toBeGreaterThan(0);
+
+        expect(tree.files).toContain(
+            '/libs/pages/test-page/components/test-component/test-component.component.css',
+        );
+        expect(tree.files).toContain(
+            '/libs/pages/test-page/components/test-component/test-component.component.html',
+        );
+        expect(tree.files).toContain(
+            '/libs/pages/test-page/components/test-component/test-component.component.spec.ts',
+        );
+        expect(tree.files).toContain(
+            '/libs/pages/test-page/components/test-component/test-component.component.ts',
+        );
     });
 });

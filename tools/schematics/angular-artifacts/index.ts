@@ -11,7 +11,7 @@ import {
 export function angularComponent(schema: Schema): Rule {
     return (host: Tree, context: SchematicContext) => {
         const options = normalizeOptions(host, schema, 'component');
-        console.log(options);
+
         return chain([
             externalSchematic('@schematics/angular', 'component', options),
             setTag(options),
